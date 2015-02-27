@@ -109,11 +109,10 @@ describe('oath', function () {
 
       var step2 = function (num) {
         return promiseTimeout(function () {
-          return num + 20;
         }, 5);
       };
-
       step1(100).then(step2).then(function (num) {
+        console.log(num);
         expect(num).to.equal(130);
         done();
       });
